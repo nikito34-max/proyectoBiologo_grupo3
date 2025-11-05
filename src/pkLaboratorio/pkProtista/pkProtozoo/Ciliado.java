@@ -7,7 +7,7 @@ public class Ciliado extends ReinoProtista {
         super(nombre, true, "heterotrofa", "cilios");
     }
     public void alimentar(AlimentHeterotrofoI alimento) {
-        System.out.println(nombre + " se alimenta de"+ getNombre() + "con sus cilios.");
+        System.out.println(nombre + " se alimenta de"+ getNombre() + " con sus cilios.");
     }
     @Override
     public void desplazar() {

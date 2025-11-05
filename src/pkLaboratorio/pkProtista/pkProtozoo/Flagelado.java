@@ -8,7 +8,7 @@ public class Flagelado extends ReinoProtista {
     }
 
     public void alimentar(AlimentHeterotrofoI alimento) {
-        System.out.println(nombre + " se alimenta mediante flagelos de"+ alimento.getNombre());
+        System.out.println(nombre + " se alimenta mediante flagelos de "+ alimento.getNombre());
     }
 
     public void fotosintetizar() {

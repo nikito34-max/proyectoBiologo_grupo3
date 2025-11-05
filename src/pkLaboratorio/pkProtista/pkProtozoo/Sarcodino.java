@@ -7,7 +7,7 @@ public class Sarcodino extends ReinoProtista {
         super(nombre, true, "heterótrofa", "pseudópodos");
     }
     public void alimentar(AlimentHeterotrofoI alimento) {
-        System.out.println(nombre + " se alimenta de"+ alimento.getNombre() + "envolviendo su alimento con pseudópodos.");
+        System.out.println(nombre + " se alimenta de "+ alimento.getNombre() + " envolviendo su alimento con pseudópodos.");
     }
 
     public void fagocitar() {
