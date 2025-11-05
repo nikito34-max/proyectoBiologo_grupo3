@@ -1,12 +1,13 @@
 package pkLaboratorio.pkProtista.pkProtozoo;
 
+import pkLaboratorio.pkAlimento.AlimentHeterotrofoI;
+
 public class Ciliado extends ReinoProtista {
     public Ciliado(String nombre) {
         super(nombre, true, "heterotrofa", "cilios");
     }
-    @Override
-    public void alimentar() {
-        System.out.println(nombre + " se alimenta barriendo particulas con sus cilios.");
+    public void alimentar(AlimentHeterotrofoI alimento) {
+        System.out.println(nombre + " se alimenta de"+ getNombre() + " con sus cilios.");
     }
     @Override
     public void desplazar() {
