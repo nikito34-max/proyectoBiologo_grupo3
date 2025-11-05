@@ -1,13 +1,14 @@
 package pkLaboratorio.pkProtista.pkProtozoo;
 
+import pkLaboratorio.pkAlimento.AlimentoParasitarioI;
+
 public class Esporozoo extends ReinoProtista {
     public Esporozoo(String nombre) {
         super(nombre, true, "parásita", "sin estructuras locomotoras");
     }
 
-    @Override
-    public void alimentar() {
-        System.out.println(nombre + " se alimenta como parásito de otros organismos.");
+    public void alimentar(AlimentoParasitarioI alimento) {
+        System.out.println(nombre + " se alimenta como parásito de "+ alimento.getNombre());
     }
 
     public void parasitar() {

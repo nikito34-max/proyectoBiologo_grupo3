@@ -11,11 +11,9 @@ public class ReinoProtista {
         this.tipoNutricion = tipoNutricion;
         this.tipoMovimiento = tipoMovimiento;
     }
-
-    public void alimentar() {
-        System.out.println(nombre + " obtiene nutrientes del medio.");
+    public void alimentarG() {
+        System.out.println(nombre + " se alimenta mediante " + tipoNutricion + ".");
     }
-
     public void reproducir() {
         System.out.println(nombre + " se reproduce principalmente por división binaria.");
     }

@@ -1,13 +1,14 @@
 package pkLaboratorio.pkProtista.pkProtozoo;
 
+import pkLaboratorio.pkAlimento.AlimentHeterotrofoI;
+
 public class Flagelado extends ReinoProtista {
     public Flagelado(String nombre) {
-        super(nombre, true, "heterótrofa o mixta", "flagelos");
+        super(nombre, true, "heterótrofa", "flagelos");
     }
 
-    @Override
-    public void alimentar() {
-        System.out.println(nombre + " se alimenta mediante flagelos.");
+    public void alimentar(AlimentHeterotrofoI alimento) {
+        System.out.println(nombre + " se alimenta mediante flagelos de"+ alimento.getNombre());
     }
 
     public void fotosintetizar() {

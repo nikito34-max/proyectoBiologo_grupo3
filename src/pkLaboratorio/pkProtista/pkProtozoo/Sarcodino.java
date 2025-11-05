@@ -1,11 +1,13 @@
 package pkLaboratorio.pkProtista.pkProtozoo;
+
+import pkLaboratorio.pkAlimento.AlimentHeterotrofoI;
+
 public class Sarcodino extends ReinoProtista {
     public Sarcodino(String nombre) {
         super(nombre, true, "heterótrofa", "pseudópodos");
     }
-    @Override
-    public void alimentar() {
-        System.out.println(nombre + " se alimenta envolviendo su alimento con pseudópodos.");
+    public void alimentar(AlimentHeterotrofoI alimento) {
+        System.out.println(nombre + " se alimenta de"+ alimento.getNombre() + "envolviendo su alimento con pseudópodos.");
     }
 
     public void fagocitar() {
