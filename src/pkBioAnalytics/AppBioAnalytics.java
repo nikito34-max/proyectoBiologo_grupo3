@@ -6,7 +6,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AppBioAnalytics {
-	public void iniciarMundoProtista() {
+    private String nombreLab;
+
+    public AppBioAnalytics(String nombreLab) {
+        this.nombreLab = nombreLab;
+    }
+
+	public void inciarLaboratorio() {
         List<Protozoo> protozoos = List.of(          
             new Ameba("Amebina", 25, 20),
             new Heliozoo("Heliozon", 40, 12)
@@ -23,7 +29,7 @@ public class AppBioAnalytics {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Laboratorio de Biologia");
+        System.out.println("Laboratorio de Biologia " + getNombreLab());
         System.out.println("Autenticarse en el Laboratorio");
 
         boolean acceso = false;
@@ -73,5 +79,9 @@ public class AppBioAnalytics {
                 }
             }
         }
+    }
+
+    public String getNombreLab() {
+        return this.nombreLab;
     }
 }
