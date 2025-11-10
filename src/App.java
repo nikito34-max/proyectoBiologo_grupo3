@@ -1,4 +1,4 @@
-import pkLaboratorio.*;
+import pkBioAnalytics.*;
 
 public class App {
     public static void main(String[] args) {
