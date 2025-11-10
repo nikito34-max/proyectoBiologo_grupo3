@@ -16,21 +16,33 @@ public class AppBioAnalytics {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
         System.out.println("Laboratorio de Biologia");
         System.out.println("Autenticarse en el Laboratorio");
 
-        System.out.print("Ingrese su usuario: ");
-        String username = input.nextLine().trim();
+        boolean acceso = false;
+        int intentos = 0;
 
-        System.out.print("Ingrese su password: ");
-        String password = input.nextLine();
+        while (!acceso && intentos < 3) {
+            System.out.print("Ingrese su usuario: ");
+            String username = input.nextLine().trim();
 
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+            System.out.print("Ingrese su password: ");
+            String password = input.nextLine();
 
-        microBio.login(username, password);
+            acceso = microBio.login(username, password);
+
+            if (acceso) {
+                System.out.println("Acceso permitido.");
+                microBio.showInfo();
+            } else {
+                intentos++;
+                System.out.println("Acceso denegado. Intento " + intentos + " de 3.");
+                if (intentos == 3) {
+                    System.out.println("Número máximo de intentos alcanzado.");
+                }
+            }
+        }
+
+        input.close();
     }
 }

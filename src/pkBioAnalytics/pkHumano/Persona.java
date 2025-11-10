@@ -16,12 +16,11 @@ public abstract class Persona {
     }
 
 
-    public void login(String username, String password) {
+    public Boolean login(String username, String password) {
         if (validarLogin(username, password)) {
-            System.out.println("Acceso permitido");
-            showInfo();
+            return true;
         } else {
-            System.out.println("Acceso denegado");
+            return false;
         }
     }
 
