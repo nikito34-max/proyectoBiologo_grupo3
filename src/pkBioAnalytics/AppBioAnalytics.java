@@ -1,9 +1,24 @@
 package pkBioAnalytics;
 import pkBioAnalytics.pkHumano.*;
+import pkBioAnalytics.pkReinoViviente.pkProtista.*;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class AppBioAnalytics {
-	public void iniciarMundoProtista() {
+    private String nombreLab;
+
+    public AppBioAnalytics(String nombreLab) {
+        this.nombreLab = nombreLab;
+    }
+
+	public void inciarLaboratorio() {
+        List<Protozoo> protozoos = List.of(          
+            new Ameba("Amebina", 25, 20),
+            new Heliozoo("Heliozon", 40, 12),
+            new Dinidium("DinidiumSt", 6.0, 5, true, 20, true), 
+            new Paramecium("ParameciumSt", 6.0, 4, true)
+        );
         MicroBiologo microBio = new MicroBiologo(
             "Juan",
             "Perez", 
@@ -15,7 +30,7 @@ public class AppBioAnalytics {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Laboratorio de Biologia");
+        System.out.println("Laboratorio de Biologia " + getNombreLab());
         System.out.println("Autenticarse en el Laboratorio");
 
         boolean acceso = false;
@@ -31,7 +46,7 @@ public class AppBioAnalytics {
             acceso = microBio.login(username, password);
 
             if (acceso) {
-                System.out.println("Acceso permitido.");
+                System.out.println("\nAcceso permitido.\n");
                 microBio.showInfo();
             } else {
                 intentos++;
@@ -43,5 +58,32 @@ public class AppBioAnalytics {
         }
 
         input.close();
+
+        if (acceso) {
+            System.out.println("\nRegistro de protozoos en el sistema\n");
+            registrar(protozoos);
+
+            microBio.observar(protozoos);
+
+            System.out.println("\n==caso de uso: REQ 01==\n");
+            microBio.analizar();
+         
+}       }
+    
+
+    public void registrar(List<Protozoo> protozoos) { 
+        if (!protozoos.isEmpty()) {
+            for (Protozoo protozoo : protozoos) {            
+                if (protozoo != null) {    
+                    System.out.println("Protozoo del tipo " + protozoo.getClass().getSimpleName() + " registrado.");
+                } else {
+                    System.out.println("Debe ingresar un protozoo");
+                }
+            }
+        }
+    }
+
+    public String getNombreLab() {
+        return this.nombreLab;
     }
 }
