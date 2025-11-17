@@ -17,47 +17,49 @@ public class Ameba extends Rizopodo {
 
     @Override
     public void mover() {
-        if (!this.getEstaVivo()) {
-            System.out.println(this.getNombre() + " no puede moverse porque está muerta.");
+        if (!super.getEstaVivo()) {
+            System.out.println(super.getNombre() + " no puede moverse porque está muerta.");
             return;
         }
-        System.out.println(this.getNombre() + " se desliza lentamente extendiendo su cuerpo gelatinoso.");
+        System.out.println(super.getNombre() + " se desliza lentamente extendiendo su cuerpo gelatinoso.");
     }
 
     @Override
     public void descansar(int horas) {
-        if (!this.getEstaVivo()) {
-            System.out.println(this.getNombre() + " no puede descansar porque está muerta.");
+        if (!super.getEstaVivo()) {
+            System.out.println(super.getNombre() + " no puede descansar porque está muerta.");
             return;
         }
-        System.out.println(this.getNombre() + " se detiene brevemente para recuperar energía en un entorno fangoso durante " + horas + " horas.");
+        System.out.println(super.getNombre() + " se detiene brevemente para recuperar energía en un entorno fangoso durante " + horas + " horas.");
     }
 
     public void dividir() {
-        if (!this.getEstaVivo()) {
-            System.out.println(this.getNombre() + " ya no puede dividirse porque está muerta.");
+        if (!super.getEstaVivo()) {
+            System.out.println(super.getNombre() + " ya no puede dividirse porque está muerta.");
             return;
         }
-        System.out.println(this.getNombre() + " se divide en dos amebas más pequeñas.");
-        this.setTamanio(this.getTamanio() / 2);
+        System.out.println(super.getNombre() + " se divide en dos amebas más pequeñas.");
+        super.setTamanio(super.getTamanio() / 2);
     }
 
     public void cazar(Heliozoo presa) {
-        if (!this.getEstaVivo()) {
-            System.out.println(this.getNombre() + " no puede cazar porque está muerta.");
+        if (!super.getEstaVivo()) {
+            System.out.println(super.getNombre() + " no puede cazar porque está muerta.");
             return;
         }
 
         if (!presa.getEstaVivo()) {
-            System.out.println(presa.getNombre() + " ya no está vivo. " + this.getNombre() + " lo ignora.");
+            System.out.println(presa.getNombre() + " ya no está vivo. " + super.getNombre() + " lo ignora.");
             return;
         }
 
-        if (this.getTamanio() > presa.getTamanio()) {
-            System.out.println(this.getNombre() + " envuelve a " + presa.getNombre() + " con sus pseudópodos y lo consume.");
+        if (super.getTamanio() > presa.getTamanio() || this.getFuerzaPseudopodo() > presa.getNumeroDeRayos()) {
+            System.out.println(super.getNombre() + " envuelve a " + presa.getNombre() + " con sus pseudópodos y lo consume.");
             presa.setEstaVivo(false);
+            super.setTamanio(super.getTamanio()+ presa.getTamanio() * 0.5);
+            System.out.println(super.getNombre() + " ha crecido a un tamaño de " + super.getTamanio() + " micrometr.");
         } else {
-            System.out.println(this.getNombre() + " intenta atrapar a " + presa.getNombre() + ", pero este escapa flotando.");
+            System.out.println(super.getNombre() + " intenta atrapar a " + presa.getNombre() + ", pero este escapa flotando.");
         }
     }
 

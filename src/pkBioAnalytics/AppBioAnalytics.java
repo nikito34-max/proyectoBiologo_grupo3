@@ -62,13 +62,14 @@ public class AppBioAnalytics {
 
             System.out.println("\nRegistro de protozoos en el sistema\n");
     	
-            List<Protozoo> protozoos = Arrays.asList(ameba1, heliozoo1, esporozooA, esporozooB, dinidium, paramecium);
+            List<Protozoo>protozoos = Arrays.asList(ameba1, heliozoo1, esporozooA, esporozooB, dinidium, paramecium);
 
             registrar(protozoos);
             System.out.println();
 
             System.out.println("Simulacion de interacciones entre protozoos...\n");
             microBio.observar();
+            System.out.println();
 
             ameba1.mover();
             ameba1.dividir();
@@ -97,30 +98,21 @@ public class AppBioAnalytics {
             esporozooA.dividirse(); 
             System.out.println("Nuevo conteo de " + esporozooA.getNombre() + ": " + esporozooA.getNumEsporozoitos());
             esporozooB.mover(); 
-            
-
-            Dinidium dinidiumEncontrada = null;
-        Paramecium parameciumEncontrado = null;
 
         
         System.out.println();
            
-            dinidium.localizar(parameciumEncontrado);
+            dinidium.localizar(paramecium);
             dinidium.inmovilizar (true);
-            dinidium.cazar (parameciumEncontrado);
-            dinidium.ingerir (parameciumEncontrado);
+            dinidium.cazar (paramecium);
+            dinidium.ingerir (paramecium);
             dinidium.crecer (6);
-            dinidiumEncontrada = dinidium;
             paramecium.crecer(0.25);
-            paramecium.serAtacado(dinidiumEncontrada);
-            parameciumEncontrado = paramecium; 
+            paramecium.serAtacado(dinidium);
 
-        if (dinidiumEncontrada != null && parameciumEncontrado != null) {
-            System.out.println("\n== Caso de uso: REQ 03 ==");
-            dinidiumEncontrada.cazar(parameciumEncontrado);
-            parameciumEncontrado.serAtacado(dinidiumEncontrada);
-            System.out.println();
-        }
+            dinidium.cazar(paramecium);
+            paramecium.serAtacado(dinidium);
+
 
             System.out.println("\n==caso de uso: REQ 01==\n");
             microBio.analizar();
