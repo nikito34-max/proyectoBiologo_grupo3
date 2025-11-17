@@ -24,7 +24,7 @@ public class Esporozoo extends Protozoo {
 
     // --- Métodos de Comportamiento ---
 
-
+    @Override
     public void mover() {
         if (!this.getEstaVivo()) {
             System.out.println(this.getNombre() + " ya no puede moverse porque está muerto.");
@@ -33,7 +33,7 @@ public class Esporozoo extends Protozoo {
         System.out.println(this.getNombre() + " no posee estructuras de locomoción; se desplaza pasivamente.");
     }
 
-    
+    @Override
     public void descansar(int horas) {
         if (!this.getEstaVivo()) {
             System.out.println(this.getNombre() + " no puede descansar porque está muerto.");
