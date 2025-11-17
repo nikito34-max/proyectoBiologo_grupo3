@@ -8,7 +8,7 @@ public class Heliozoo extends Rizopodo {
         this.setNumeroDeRayos(0);
     }
 
-    public Heliozoo(String nombre, double tamanio, int numeroDeRayos) {
+    public Heliozoo(String nombre, Double tamanio, Integer numeroDeRayos) {
         super();
         super.setNombre(nombre);
         super.setTamanio(tamanio);

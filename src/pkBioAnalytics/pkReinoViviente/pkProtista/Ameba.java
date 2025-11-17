@@ -8,7 +8,7 @@ public class Ameba extends Rizopodo {
         this.setFuerzaPseudopodo(10);
     }
 
-    public Ameba(String nombre, double tamanio, int fuerzaPseudopodo) {
+    public Ameba(String nombre, Double tamanio, Integer fuerzaPseudopodo) {
         super();
         super.setNombre(nombre);
         super.setTamanio(tamanio);

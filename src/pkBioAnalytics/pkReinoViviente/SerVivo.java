@@ -8,14 +8,6 @@ public abstract class SerVivo {
         this.setEstaVivo(true);
         this.setNombre("Sin nombre");
     }
-    /**
-     * Constructor con nombre
-     * @param nombre El que gustes
-     */
-    public SerVivo(String nombre){
-        this();
-        this.setNombre(nombre);
-    }
 
     public String getNombre() {
         return nombre;

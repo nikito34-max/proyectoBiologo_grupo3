@@ -6,7 +6,7 @@ public abstract class Rizopodo extends Protozoo {
         super();
         this.setTamanio(0.0);
     }
-    public Rizopodo(String nombre, double tamanio) {
+    public Rizopodo(String nombre, Double tamanio) {
         super();
         super.setNombre(nombre);
         this.setTamanio(tamanio);

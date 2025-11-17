@@ -4,6 +4,14 @@ public abstract class Protozoo extends ReinoProtista {
     public Protozoo(){
         super();
     }
+        /**
+     * Constructor con nombre
+     * @param nombre El que gustes
+     */
+    public Protozoo(String nombre){
+        super();
+        super.setNombre(nombre);
+    }
     public void mover(){
         System.out.println("El protozoo se está moviendo.");
     }

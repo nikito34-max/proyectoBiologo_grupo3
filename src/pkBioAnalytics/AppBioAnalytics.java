@@ -51,8 +51,8 @@ public class AppBioAnalytics {
         input.close();
 
         if (acceso) {
-            Ameba ameba1 = new Ameba("Amebina", 25, 20);
-            Heliozoo heliozoo1 = new Heliozoo("Heliozon", 40, 12);
+            Ameba ameba1 = new Ameba("Amebina", 25.0, 20);
+            Heliozoo heliozoo1 = new Heliozoo("Heliozon", 40.0, 15);
             Dinidium dinidium = new Dinidium("DinidiumSt", 6.0, 5, true, 20, true);
             Paramecium paramecium = new Paramecium("ParameciumSt", 6.0, 4, true);
     
