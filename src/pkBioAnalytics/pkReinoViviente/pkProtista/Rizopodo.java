@@ -1,22 +1,41 @@
 package pkBioAnalytics.pkReinoViviente.pkProtista;
 
-public abstract class Rizopodo extends Protozoo {
+public abstract class ReinoProtista {
 
-    public Rizopodo() {
-        super();
+    protected String nombre;
+    protected boolean estaVivo;
+    protected double tamanio;   
+
+    public ReinoProtista() {
+        this.nombre = "Organismo desconocido";
+        this.estaVivo = true;
+        this.tamanio = 1.0;    
     }
 
-    public Rizopodo(String nombre, double tamanio) {
-        super(nombre, tamanio);
+   
+
+    public String getNombre() {
+        return nombre;
     }
 
-    @Override
-    public double getTamanio() {    
-        return this.tamanio;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    @Override
-    public void setTamanio(double tamanio) {   
+    public boolean getEstaVivo() {
+        return estaVivo;
+    }
+
+    public void setEstaVivo(boolean estaVivo) {
+        this.estaVivo = estaVivo;
+    }
+
+
+    public double getTamanio() {
+        return tamanio;
+    }
+
+    public void setTamanio(double tamanio) {
         this.tamanio = tamanio;
     }
 }
