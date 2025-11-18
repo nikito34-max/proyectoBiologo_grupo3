@@ -1,0 +1,47 @@
+package pkBioAnalytics.pkReinoViviente.pkProtista;
+
+public class Euglenoide extends Flagelado {
+
+    private String pigmentacion;
+    private boolean tieneCloroplastos;
+
+    public Euglenoide() {
+        super();
+    }
+
+    public Euglenoide(String nombre, double tamanio, int numeroFlagelos, String pigmentacion, boolean tieneCloroplastos) {
+        super(nombre, tamanio, numeroFlagelos);
+        this.pigmentacion = pigmentacion;
+        this.tieneCloroplastos = tieneCloroplastos;
+    }
+
+    public String getPigmentacion() {
+        return pigmentacion;
+    }
+
+    public void setPigmentacion(String pigmentacion) {
+        this.pigmentacion = pigmentacion;
+    }
+
+    public boolean isTieneCloroplastos() {
+        return tieneCloroplastos;
+    }
+
+    public void setTieneCloroplastos(boolean tieneCloroplastos) {
+        this.tieneCloroplastos = tieneCloroplastos;
+    }
+
+    @Override
+    public void mover() {
+        System.out.println(this.getNombre() + 
+            " (Euglenoide) se mueve gracias a su flagelo. Tiene " + this.numeroFlagelos + " flagelo(s).");
+    }
+
+    public void fotosintetizar() {
+        if (tieneCloroplastos) {
+            System.out.println(this.getNombre() + " realiza fotosíntesis y obtiene energía de la luz.");
+        } else {
+            System.out.println(this.getNombre() + " no puede fotosintetizar porque no tiene cloroplastos.");
+        }
+    }
+}
