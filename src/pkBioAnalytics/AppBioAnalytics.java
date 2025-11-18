@@ -2,6 +2,8 @@ package pkBioAnalytics;
 
 import pkBioAnalytics.pkHumano.*;
 import pkBioAnalytics.pkReinoViviente.pkProtista.*;
+import pkBioAnalytics.pkReinoViviente.pkProtista.Tripanosoma;
+import pkBioAnalytics.pkReinoViviente.pkProtista.Euglenoide;
 
 import java.util.Arrays;
 import java.util.List;
