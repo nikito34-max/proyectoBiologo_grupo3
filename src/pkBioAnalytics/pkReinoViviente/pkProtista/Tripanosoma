@@ -25,6 +25,11 @@ public class Tripanosoma extends Flagelado {
     public void mover() {
         System.out.println(this.getNombre() + " (Tripanosoma) se desplaza con su flagelo y membrana ondulante.");
     }
+    
+    @Override
+    public void descansar(int horas){
+        System.err.println(getNombre()+ " Esta descansando por " + horas + " horas.");
+    }
 
     public void parasitar(Protozoo presa) {
         if (!this.getEstaVivo()) {
