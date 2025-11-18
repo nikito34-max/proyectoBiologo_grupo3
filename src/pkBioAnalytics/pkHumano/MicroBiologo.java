@@ -11,13 +11,4 @@ public class MicroBiologo extends Persona {
     public void showInfo() {
         System.out.println("Microbiólogo: " + getNombre() + " " + getApellido() + ", Especialidad: " + this.especialidad);
     }
-
-    public void observar() {
-        System.out.println("El microbiólogo " + getNombre() + " está observando las muestras bajo el microscopio.");
-    }
-
-
-    public void analizar() {
-        System.out.println("El microbiólogo " + getNombre() + " está analizando las muestras y anotando datos importantes.");    
-    }
 }

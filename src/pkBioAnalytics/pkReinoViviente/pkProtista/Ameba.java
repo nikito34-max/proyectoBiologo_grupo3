@@ -41,7 +41,7 @@ public class Ameba extends Rizopodo {
         System.out.println(super.getNombre() + " se divide en dos amebas más pequeñas.");
         super.setTamanio(super.getTamanio() / 2);
     }
-
+    
     public void cazar(Heliozoo presa) {
         if (!super.getEstaVivo()) {
             System.out.println(super.getNombre() + " no puede cazar porque está muerta.");
