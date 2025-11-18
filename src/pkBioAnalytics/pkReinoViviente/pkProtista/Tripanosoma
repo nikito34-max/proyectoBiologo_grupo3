@@ -1,0 +1,44 @@
+package pkBioAnalytics.pkReinoViviente.pkProtista;
+
+public class Tripanosoma extends Flagelado {
+
+    private String tipoInfeccion;
+
+    public Tripanosoma() {
+        super();
+    }
+
+    public Tripanosoma(String nombre, double tamanio, int numeroFlagelos, String tipoInfeccion) {
+        super(nombre, tamanio, numeroFlagelos);
+        this.tipoInfeccion = tipoInfeccion;
+    }
+
+    public String getTipoInfeccion() {
+        return tipoInfeccion;
+    }
+
+    public void setTipoInfeccion(String tipoInfeccion) {
+        this.tipoInfeccion = tipoInfeccion;
+    }
+
+    @Override
+    public void mover() {
+        System.out.println(this.getNombre() + " (Tripanosoma) se desplaza con su flagelo y membrana ondulante.");
+    }
+
+    public void parasitar(Protozoo presa) {
+        if (!this.getEstaVivo()) {
+            System.out.println(this.getNombre() + " no puede parasitar porque está muerto.");
+            return;
+        }
+
+        System.out.println(this.getNombre() + " intenta parasitar a " + presa.getNombre() +
+                " mediante infección: " + this.tipoInfeccion);
+
+        if (presa.getTamanio() < this.getTamanio() * 0.5) {
+            System.out.println("Parasitación poco efectiva debido al tamaño pequeño de la presa.");
+        } else {
+            System.out.println("Parasitación exitosa (simulada).");
+        }
+    }
+}
