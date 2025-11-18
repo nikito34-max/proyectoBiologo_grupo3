@@ -8,13 +8,12 @@ public abstract class Persona {
     private String password;
 
     public Persona(String nombre, String apellido, String cedula, String username, String password ) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
-        this.username = username;
-        this.password = password;
+        this.setNombre(nombre);
+        this.setApellido(apellido);
+        this.setCedula(cedula);
+        this.setUsername(username);
+        this.setPassword(password);
     }
-
 
     public Boolean login(String username, String password) {
         if (validarLogin(username, password)) {
@@ -24,12 +23,18 @@ public abstract class Persona {
         }
     }
 
-
     public Boolean validarLogin(String username, String password) {
         return this.username.equals(username) && this.password.equals(password);
     }
 
-    public abstract void showInfo();
+    public void showInfo() {
+        System.out.println(
+            "Nombre: " + this.getNombre() +
+            " | Apellido: " + this.getApellido() +
+            " | Cédula: " + this.getCedula() +
+            " | Usuario: " + this.getUsername()
+        );
+    }
 
     public String getCedula() {
         return cedula;
@@ -71,3 +76,4 @@ public abstract class Persona {
         this.password = password;
     }
 }
+
